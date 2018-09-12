@@ -1,7 +1,11 @@
 <h1> Daily Dosage of Dog Pictures</h1>
-<button (click)="getRandomPicture()">Cli</button>
-<img src="{{currentPictureLink}}" alt="pic">
-All breeds:  <br/>
-<span *ngFor="let breed of breedList">
-  {{breed}} <br/>
-</span>
+<hr>
+<div style="text-align: left">
+  Time interval: {{TIME_INTERVAL/1000}} Seconds
+</div>
+<div style="text-align: center">
+  <h3>Ruff day?</h3>
+  <img src="{{currentPictureLink}}" alt="pic"> <br/>
+  <button (click)="getRandomPicture()">Get another picture</button>
+</div>
+

@@ -12,8 +12,10 @@ export class DashboardComponent implements OnInit {
 
   breedList = [];
   currentPictureLink;
+  TIME_INTERVAL = 5000;
 
   ngOnInit() {
+    //Load list of all breeds
     this.endpointInfo.listAllBreeds().subscribe((response) => {
       console.log(response);
       for(let breed in response['message'])
@@ -22,6 +24,20 @@ export class DashboardComponent implements OnInit {
       }
       console.log(this.breedList);
     })
+
+    this.endpointInfo.getRandomPicture().subscribe((response) => {
+      console.log(response);
+      this.currentPictureLink = response['message'];
+    })
+
+    //load random picture
+    setInterval(() => {
+      this.endpointInfo.getRandomPicture().subscribe((response) => {
+        console.log(response);
+        this.currentPictureLink = response['message'];
+      })
+    }, this.TIME_INTERVAL);
+
   }
 
   getRandomPicture(): void{

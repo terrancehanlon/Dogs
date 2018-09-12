@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EndpointInfoService } from './endpoint-info.service';
 import {HttpClientModule} from '@angular/common/http';
+import { SelectBreedsComponent } from './select-breeds/select-breeds.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    SelectBreedsComponent
   ],
   imports: [
     BrowserModule,
