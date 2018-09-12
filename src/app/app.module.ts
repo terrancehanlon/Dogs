@@ -6,13 +6,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EndpointInfoService } from './endpoint-info.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SelectBreedsComponent } from './select-breeds/select-breeds.component';
+import { HistoryRecordsComponent } from './history-records/history-records.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    SelectBreedsComponent
+    SelectBreedsComponent,
+    HistoryRecordsComponent
   ],
   imports: [
     BrowserModule,

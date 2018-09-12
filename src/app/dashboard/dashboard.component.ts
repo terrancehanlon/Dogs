@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EndpointInfoService } from '../endpoint-info.service';
+import { HistoryRecordService } from '../history-record.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,7 @@ import { EndpointInfoService } from '../endpoint-info.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private endpointInfo: EndpointInfoService) { }
+  constructor(private endpointInfo: EndpointInfoService, private historyService: HistoryRecordService) { }
 
   breedList = [];
   currentPictureLink;
@@ -23,6 +24,9 @@ export class DashboardComponent implements OnInit {
         this.breedList.push(breed);
       }
       console.log(this.breedList);
+      let url = this.historyService.requests.pop();
+      this.historyService.addItem(response, url);
+      
     })
 
     this.endpointInfo.getRandomPicture().subscribe((response) => {
