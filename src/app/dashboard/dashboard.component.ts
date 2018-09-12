@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   constructor(private endpointInfo: EndpointInfoService) { }
 
   breedList = [];
+  currentPictureLink;
 
   ngOnInit() {
     this.endpointInfo.listAllBreeds().subscribe((response) => {
@@ -20,8 +21,15 @@ export class DashboardComponent implements OnInit {
         this.breedList.push(breed);
       }
       console.log(this.breedList);
-
     })
   }
 
+  getRandomPicture(): void{
+    this.endpointInfo.getRandomPicture().subscribe((response) => {
+      console.log(response);
+      this.currentPictureLink = response['message'];
+    })
+  }
+
+  
 }

@@ -1,4 +1,6 @@
 <h1> Daily Dosage of Dog Pictures</h1>
+<button (click)="getRandomPicture()">Cli</button>
+<img src="{{currentPictureLink}}" alt="pic">
 All breeds:  <br/>
 <span *ngFor="let breed of breedList">
   {{breed}} <br/>

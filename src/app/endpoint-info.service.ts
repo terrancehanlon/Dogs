@@ -15,4 +15,9 @@ export class EndpointInfoService {
     let url = 'https://dog.ceo/api/breeds/list/all';
     return this.http.get(url);
   }
+
+  getRandomPicture(): Observable<Object>{
+    let url = 'https://dog.ceo/api/breeds/image/random'; 
+    return this.http.get(url);
+  }
 }
