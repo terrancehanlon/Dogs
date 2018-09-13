@@ -14,7 +14,7 @@ app.use(express.static('./dist/dogs'));
 // app.use('*', express.static(__dirname+ '/dist/dogs/runtime.a66f828dca56eeb90e02.js'));
 // app.use('./dist/styles', express.static(__dirname+ '/dist/dogs/styles.34c57ab7888ec1573f9c.css'));
 // router.get('*', express.static(path.resolve('dist/dogs/index.html')));
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
     console.log(__dirname);
     res.sendFile(__dirname + '/dist/dogs/index.html');
 })
