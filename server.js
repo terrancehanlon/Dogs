@@ -1,7 +1,6 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-var router = express.Router();
 
 const app = express();
 
@@ -29,5 +28,7 @@ app.get('/', function(req, res) {
 // });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 3000);
-// /home/terrance/Desktop/projs/Angular/Dogs/dogs/dist/dogs/index.html
+const port = process.env.PORT;
+app.listen(port, () => {
+    console.log('sdfasdf' + port);
+});
