@@ -16,18 +16,7 @@ export class DashboardComponent implements OnInit {
   TIME_INTERVAL = 5000;
 
   ngOnInit() {
-    //Load list of all breeds
-    this.endpointInfo.listAllBreeds().subscribe((response) => {
-      console.log(response);
-      for(let breed in response['message'])
-      {
-        this.breedList.push(breed);
-      }
-      console.log(this.breedList);
-      let url = this.historyService.requests.pop();
-      this.historyService.addItem(response, url);
-      
-    })
+
 
     this.endpointInfo.getRandomPicture().subscribe((response) => {
       console.log(response);

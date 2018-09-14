@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EndpointInfoService } from '../endpoint-info.service';
+import { HistoryRecordService } from '../history-record.service';
 
 @Component({
   selector: 'app-select-breeds',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectBreedsComponent implements OnInit {
 
-  constructor() { }
+  breedList = [];
+
+  constructor(private endpointInfo: EndpointInfoService, private historyService: HistoryRecordService) { }
 
   ngOnInit() {
+        //Load list of all breeds
+        console.log('loading breeds');
+        this.endpointInfo.listAllBreeds().subscribe((response) => {
+          console.log(response);
+          for(let breed in response['message'])
+          {
+            this.breedList.push(breed);
+          }
+          console.log(this.breedList);
+          let url = this.historyService.requests.pop();
+          this.historyService.addItem(response, url);
+          
+        })
+  }
+
+  selectBreed(breed): void{
+    console.log(breed);
   }
 
 }

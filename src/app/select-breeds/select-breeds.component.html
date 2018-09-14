@@ -1,1 +1,6 @@
 All breeds:  <br/>
+<div class="container">
+    <span *ngFor="let breed of breedList">
+        <a href="#" (click)="selectBreed(breed)">{{breed}} </a> <br/>
+    </span>
+</div>
