@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 
 
 const port = process.env.PORT;
-app.listen (port || 8080);
+app.listen (port || 3000);
 // app.listen(port, () => {
 //     console.log('sdfasdf' + port);
 // });
