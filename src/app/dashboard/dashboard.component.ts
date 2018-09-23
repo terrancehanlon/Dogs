@@ -42,13 +42,13 @@ export class DashboardComponent implements OnInit {
         
         this.currentPictureLink = response['message'];
         input.src = this.currentPictureLink;
-        this.getPictureSize(this.currentPictureLink);
-        if(this.dimensions['width'] > 800 || this.dimensions['height'] > 1000)
-        {
-          input.width = 500;
-          input.height = 500;
-        }
-       // div.innerHTML += input;
+      //   this.getPictureSize(this.currentPictureLink);
+      //   if(this.dimensions['width'] > 500 || this.dimensions['height'] > 300)
+      //   {
+      //     input.width = 100;
+      //     input.height = 100;
+      //   }
+      //  div.innerHTML += input;
       })
     }, this.TIME_INTERVAL);
 
@@ -71,6 +71,9 @@ export class DashboardComponent implements OnInit {
       this.dimensions['width'] = w;
       this.dimensions['height'] = h;
     }
+    setTimeout(() => { 
+      console.log(this.dimensions);
+    }, 500)
   }
 
   
