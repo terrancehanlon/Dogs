@@ -4,7 +4,9 @@ Supporting DaaS (Dogs as a service)
 ......  using https://dog.ceo/dog-api/
 
 
-
+`git clone https://github.com/terrancehanlon/Dogs.git`
+`cd Dogs`
+`npm run local`
 
 
 
