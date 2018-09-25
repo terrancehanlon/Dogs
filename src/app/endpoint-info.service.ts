@@ -28,6 +28,7 @@ export class EndpointInfoService {
     let url = 'https://dog.ceo/api/breed/' + breed + '/images/random';
     console.log(url);
     this.historyService.requests.push(url);
+    console.log(this.historyService.requests);
     return this.http.get(url);
   }
 }

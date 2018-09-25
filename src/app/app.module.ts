@@ -9,6 +9,7 @@ import { SelectBreedsComponent } from './select-breeds/select-breeds.component';
 import { HistoryRecordsComponent } from './history-records/history-records.component';
 import { ShowSpecificBreedComponent } from './show-specific-breed/show-specific-breed.component';
 import { SavedRequestsComponent } from './saved-requests/saved-requests.component';
+import { HistoryModalComponent } from './history-modal/history-modal.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SavedRequestsComponent } from './saved-requests/saved-requests.componen
     SelectBreedsComponent,
     HistoryRecordsComponent,
     ShowSpecificBreedComponent,
-    SavedRequestsComponent
+    SavedRequestsComponent,
+    HistoryModalComponent
   ],
   imports: [
     BrowserModule,

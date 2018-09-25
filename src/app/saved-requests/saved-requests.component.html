@@ -1,3 +1,9 @@
-<p>
-  saved-requests works!
-</p>
+<input type="button" *ngIf="!showingHistory" (click)="showingHistory = true" value="Show Request History">
+<input type="button" *ngIf="showingHistory" (click)="showingHistory = false" value="Hide Request History">
+
+<div *ngIf="showingHistory"> 
+  <h2>Showing Request log</h2>
+  <span *ngFor="let item of historyService.requests">
+    {{item}} <br/>
+  </span>
+</div>
