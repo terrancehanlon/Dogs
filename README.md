@@ -1,5 +1,7 @@
 # Dogs
 Supporting DaaS (Dogs as a service)
+<h3> Web App Link: </h3>
+https://d-d-of-dogs.herokuapp.com/
 <hr>
 ......  using https://dog.ceo/dog-api/
 
