@@ -23,4 +23,11 @@ export class EndpointInfoService {
     this.historyService.requests.push(url); 
     return this.http.get(url);
   }
+
+  getByBreed(breed): Observable<Object>{
+    let url = 'https://dog.ceo/api/breed/' + breed + '/images/random';
+    console.log(url);
+    this.historyService.requests.push(url);
+    return this.http.get(url);
+  }
 }

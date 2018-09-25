@@ -10,6 +10,11 @@ import { HistoryRecordService } from '../history-record.service';
 export class SelectBreedsComponent implements OnInit {
 
   breedList = [];
+  selectedBreed = {
+    name: '',
+    link: ''
+  }
+  
 
   constructor(private endpointInfo: EndpointInfoService, private historyService: HistoryRecordService) { }
 
@@ -31,6 +36,15 @@ export class SelectBreedsComponent implements OnInit {
 
   selectBreed(breed): void{
     console.log(breed);
+    this.selectedBreed['name'] = breed;
+    this.endpointInfo.getByBreed(breed)
+    .subscribe((response) => {
+      console.log(response);
+      this.selectedBreed['link'] = response['message'];
+      console.log(this.selectedBreed);
+    }, err => {
+      console.log(err);
+    })
   }
 
 }

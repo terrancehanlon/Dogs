@@ -1,6 +1,16 @@
 .container{
-    width: 800px;
-    height: 400px;
-    overflow-x: auto;
+    width: 50%; 
+    float: left;
+    height: 500px;
     overflow-y: scroll;
+}
+.link_button{
+    background:none!important;
+    color: blue;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    /*border is optional*/
+    border-bottom:1px solid #444; 
+    cursor: pointer;
 }

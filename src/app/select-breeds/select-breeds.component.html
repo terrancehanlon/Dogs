@@ -1,11 +1,13 @@
 All breeds:  <br/>
-<div class="col">
-  <div class="row">
-          <span *ngFor="let breed of breedList">
-              <a href="#" (click)="selectBreed(breed)">{{breed}} </a> <br/>
-          </span>
-  </div>
-  <div class="row">
-      <app-show-specific-breed></app-show-specific-breed>
-  </div>  
+
+<div style="width: 100%; overflow: hidden">
+    <div class="container">
+            <span *ngFor="let breed of breedList">
+                    <button class="link_button" (click)="selectBreed(breed)">{{breed}}</button>
+                    <br/>
+            </span>
+    </div>
+    <div style="margin-left: 55%;"> {{selectedBreed['name']}}
+        <img src="{{selectedBreed['link']}}">    
+    </div>
 </div>
